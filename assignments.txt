@@ -89,26 +89,35 @@ else:
 7)Take a string from the user and check contains only  special chars or not?
 =============================================================================
 string=raw_input("Enter the string")
-if string.isalnum():
-    print "String contains no special characters"
+if not string.isdigit():
+    for i in string:
+        if i.isalpha():
+            print "not all characters are special characters"
+            break
+    else:
+        print "string contains all special characters"
 else:
-    print "string contains special characters"
+    print"string contains only digits as characters"
 
 8)Take a string from the user and check contains only  capiatl letters or not
 =============================================================================
 string=raw_input("Enter the string")
-if string.isupper():
+if string.isupper() and isalpha():
     print "String contains only uppercase characters"
 else:
     print "String contains both lower and uppercase characters "
+    
 
 9)Take a string from the user and check contains only  small letters or not?
 ============================================================================
 string=raw_input("Enter the string")
-if string.islower():
+
+    
+if string.islower() and string.isalpha():
     print "String contains only lowercase characters"
+    
 else:
-    print "String contains both lower and uppercase characters "
+    print "String contains other characters "
 
 10)10. Show the below menu to the user until and until user select quit and display corresponding os message
 
@@ -133,5 +142,754 @@ while True:
         print("Quit")
         break
 
-11)
+11)Take a string from the user and check contains atleast one digit or not?
+===========================================================================
+string=raw_input("Enter the string")
+if string.isalnum():
+    for i in string:
+        if i.isdigit():
+            
+            print "True,string contains digits"
+            break
+    else:
+        print "False,string contains no digits"
+else:
+    print "contains special characters"
+
+12)take a string from the user and check contains atleast one alphabets or not?
+==============================================================================
+string=raw_input("Enter the string")
+if not string.isalpha():
+    for i in string:
+        if i.isalpha():
+            print "string contains atleast one alphabet"
+            break
+    else:
+        print"string contains no alphabet"
+
+13)take a string from the user and check contains atleast one chars or not?
+===========================================================================
+
+
+
+
+
+
+
+
+
+
+
+14)Take a string from the user and check contains atleast one capital letter or not?
+=================================================================================
+string=raw_input("enter the string")
+for i in string:
+    if i.isupper():
+        print "One capital is present in the given string"
+        break
+else:
+    print "No capital letters found in the string"
+
+
+
+
+15)Take a string from the user and check contains atleast one small letter or not?
+==================================================================================
+
+string=raw_input("enter the string")
+for i in string:
+    if i.islower():
+        print "One small case letter is present in the given string"
+        break
+else:
+    print "No small case letter found in the string"
+
+
+
+
+16)Take the input from the user for(Total number of people, toatl number of busses, Number of seats for bus). Based on the input
+	Deside whether there is sufficient busses or not and give solution for how many extra busses required.
+================================================================================================================================
+people=input("Enter total number of people")
+bus=input("Enter total number of buses")
+seat=input("Enter total number of seats per bus")
+totalseats=bus*seat
+if totalseats >= people:
+    print "sufficient buses"
+else:
+    print "insufficient buses"
+    reqSeats = people-totalseats
+    reqBuses = float(reqSeats)/float(seat)
+    if reqBuses.is_integer():
+        print "required buses:", reqBuses
+    else:
+        print "required buses:", int(reqBuses)+1
+
+17)Print the first 100 odd numbers
+==================================
+for i in range(100):
+    if i%2!=0:
+        print i
+
+
+
+18)Determine the factors of a number entered  by the user
+=========================================================
+x=input("Enter the value of x")
+for i in range(1,100):
+	if x%i==0:
+		print i;
+		i+=1
+
+
+19. Play a number guessing game (User enters a guess, you print YES or Higher or Lower)
+=======================================================================================
+
+
+
+
+
+
+
+
+20. Take two numbers from the user a,b check whether a is divisible by b or not?
+================================================================================
+a=int(raw_input("Enter value1"))
+b=int(raw_input("Enter value2"))
+if b>0:
+    
+    if a%b==0:
+        print "divisible"
+    else:
+        print"not divisible"
+
+
+21.Given an age, figure out whether someone's a baby, toddler, child, teenager, adult or old codger
+===================================================================================================
+
+age=input("ENter the age")
+if age <=5:
+    print"toddler"
+elif (age>5 and age<18):
+    print "teenager"
+elif (age>=18 and age<=30):
+    print "adult"
+else:
+    print"old codger"
+
+22)Find the sum of all the multiples of 3 or 5 below 1000
+=========================================================
+a=3
+sum=0
+
+for i in range(1000):
+    if i%a==0:
+        sum=sum+i
+print sum
+
+
+23)Write a program to findout big of two numbers
+================================================
+a=input("Enter first number")
+b=input("Enter second number")
+if a>b:
+    print "%d is bigger" %a
+else:
+    print '%d is bigger'%b
+
+
+24)Write a program to findout biggest number in the given numbers
+=================================================================
+numbers=input("Enter the numbers separated with coma")
+
+t=0
+for i in numbers:
+    if t<i:
+        t=i
+print "%d is bigger"%t
+
+25)Findout third occurance of given substring
+=============================================
+text = raw_input("Enter the string:")
+sub=raw_input("Enter the substring:")
+index = 0
+while index < len(text):
+    index = text.find(sub, index)
+    if index == -1:
+        break
+    print('substring found at %s' %index)
+    index += 1
+
+
+
+
+26)findout nth occurance of given substring
+===========================================
+s1=raw_input("Enter the string")
+sub1=raw_input("Enter the substring")
+i=0
+
+j=i+len(sub1)
+for x in s1:
+    if sub1==s1[i:j]:
+        
+        print "no of occurances of substring:",s1.count(sub1)
+        break  
+        
+    i+=1
+    j+=1
+
+----------------------------------------------------
+s=raw_input("Enter the string")
+sub=raw_input("Enter the substring")
+a=s.lower()
+b=sub.lower()
+x=b in a
+if x==True:
+    print "substring found"
+    print "no of occurances of substring:",s1.count(sub1)
+else:
+    print"substring not found"
+
+
+
+
+
+27)Take some single digit numbers from the user and findout min, maximum, sum, average
+=======================================================================================
+a=input("enter numbers")
+for i in a:
+    l=len(str(i))
+    if i!=1:
+        print "enter only single digits"
+        break
+    
+        
+else:
+   
+    m=min(a)
+    mx=max(a)
+        
+    s=sum(a)
+    avg=s/len(a)
+
+    print "minimum is %d"%m
+    print "Maximum is %d"%mx
+    print "sum is %d"%s
+    print "average is %d"%avg
+
+
+
+
+
+
+====================================================================
+29)names  ="emp1,emp2,emp3,emp4" iterate through the employee names.
+====================================================================
+names  ="emp1,emp2,emp3,emp4"
+a=names.split(',')
+print a
+['emp1', 'emp2', 'emp3', 'emp4']
+>>> for i in a:
+	print i
+
+	
+emp1
+emp2
+emp3
+emp4
+
+
+30)Take actuual string, soucrce string, destination string. replce first nth occurances of soucestring with destination string of actual string
+=================================================================================================================================================
+
+s=raw_input("Enter the string")
+sub=raw_input("Enter the sub string")
+newsub=raw_input("Enter the new substring")
+if s.find(sub)==-1:
+    print "substring not found"
+    
+else:
+    print "substring found"
+    newstring=s.replace(sub,newsub)
+    print "The new string is ", newstring
+    
+
+
+31)Take numbers from the user and findout min, maximum, sum, average
+=====================================================================
+a=input("Enter the numbers")
+for i in a:
+    m=min(a)
+    mx=max(a)
+        
+    s=sum(a)
+    avg=s/l
+
+    print "minimum is %d"%m
+    print "Maximum is %d"%mx
+    print "sum is %d"%s
+    print "average is %d"%avg
+    break
+
+
+32)l=[10,20,30,[40,50,60],70,[80,90,20]]. Convert this list as sigle dimentional list
+
+l=[10,20,30,[40,50,60],70,[80,90,20]]
+l1=[]
+for i in l:
+    if type(i) is list:
+        for k in i:
+            l1.append(k)
+    else:
+        l1.append(i)
+print l1
+
+
+33)input: "google" print count of each character
+================================================
+string=raw_input("Enter the string::")
+dict1={}
+
+for i in string:
+    
+        
+    #print "charcter %s = %s" %(i,string.count(i))
+    dict1[i] = string.count(i)
+
+
+        
+#print "count of the %s is %s" %(i,count)
+
+for i in dict1:
+    print "count of character %s is " %i,dict1[i]
+
+
+
+
+34)Convert n dimentional list to single dimentiona list
+=======================================================
+l=[80,90,2,[1,2,[3,4,[1,2,[5,6],4]]]]
+l1=[]
+
+def f1(list1):
+        for k in list1:
+                if type(k) is list:
+                        f1(k)
+                else:
+                        l1.append(k)    
+    
+
+
+for i in l:
+        if type(i) is list:
+                f1(i) 
+        else:
+                l1.append(i)
+print l1
+
+
+35)l=[1,2,3] just make it as a string
+======================================
+l=[1,2,3]
+string=""
+for i in l:
+    string=string+str(i)
+print "string is ",string
+
+
+
+
+36)l=[1,2,3,[4,5,6],7,[8,9,10]] for single dimentional list
+===========================================================
+l=[1,2,3,[4,5,6],7,[8,9,10]] 
+l1=[]
+for i in l:
+    if type(i) is list:
+        for k in i:
+            l1.append(k)
+    else:
+        l1.append(i)
+print l1
+
+
+37)l=['a','A','b','B','d','D','c','C'] WAP to find out case insensitive count and case insensitive search for an element
+========================================================================================================================
+
+
+l=['a','A','b','B','d','D','c','C','D','d']
+usr_input = raw_input("Enter the substring to be searched and count the occurances")
+a=usr_input.lower()
+usr_inputc=0
+s=str(l)
+new_string=s.lower()
+
+print type(s)
+
+for i in l:
+        if s.find(usr_input) ==-1:
+                print "substring not found"
+		break
+        else:
+                usr_inputc = new_string.count(a)
+                
+                break
+print "count of the %s is %s" %(usr_input,usr_inputc)
+
+
+
+38)sort the list properly
+==========================
+
+
+def sort_list(tempList):   
+    
+    l1 = []
+    
+    while tempList:
+        t = tempList[0]
+        for i in tempList:
+            if i < t:
+                t = i
+        l1.append(t)
+        tempList.remove(t)
+        
+    print "sorted list is ",l1
+    
+    
+    
+print("PRESS x TO EXIT FROM THE LOOP")
+tempList = []
+
+x=True
+while x:
+
+    numlist = raw_input("enter the elements to the list ")
+    if numlist.isdigit():
+        numlist=int(numlist)
+    if numlist=='x':
+        break
+    else:
+        #tempList.append(int(numlist))
+        
+            
+            tempList.append(numlist)
+
+
+print "original list is",tempList 
+
+sort_list(tempList)
+
+
+40. WAP to find union and intersection of lists.
+===============================================
+def list_union():
+	a=[1,2,3,4,2,4,7,6]
+	b=[4,5,6,7]
+	c=a+b
+	print c
+	for i in c:
+    		if c.count(i)>1:
+        	c.remove(i)
+	print "union", c
+
+
+
+def list_inter():
+    #print a,b
+    d=[]
+    for x in a:
+        for y in b:
+            if x==y:
+                d.append(x)
+                print "Intersection is ", d
+#list_inter()
+                
+
+list_union()
+list_inter()
+
+
+41:input: fun(5) output: [1,2,3,4,3,2,1]
+========================================
+
+usr_input=input("Enter the num")
+#temp=[]
+range(1,usr_input,1)+range(usr_input,0,-1)
+#i=1
+#while i < usr_input:
+    #temp=temp+[i]
+    #i+=1
+    #if i == usr_input:
+        #temp=temp+range(usr_input,0,-1)
+#print temp
+
+
+
+43) Remove duplicates from the list: a=[1,2,3,2,3,4,1,3,4]
+===========================================================
+a = [1,2,3,2,3,4,1,3,4]
+
+s = []
+for i in a:
+    if i not in s:
+        s.append(i)
+print s
+
+
+
+44. l=['1','2','3'] get the sum of the list
+===========================================
+
+l=['1','2','3']
+l1=[]
+s=0
+for i in l:
+    l1=l1+[int(i)]
+
+for k in l1:
+    s=s+k
+        
+    #s=sum(l1)
+print l1
+
+print "sum is %d"%s
+
+45.l1=[1,2,3,4] l2=[5,6,7,8] sum of two lists
+==============================================
+
+l1=[1,2,3,4] 
+l2=[5,6,7,8]
+t=zip(l1,l2)
+print t
+sum=[]
+sum=[i+j for i,j in t]     
+print "sum list is %s"%sum
+
+
+46.Find third max value of element in a list with sorting and without sorting a list.
+=====================================================================================
+
+
+
+
+
+
+
+
+49. input = 1,2,3,4,5,6,8,10 output = odd,even,odd,even,odd,even,even,even
+==========================================================================
+c = int(raw_input("No.of inputs:"))
+l1 =[]
+l2 = []
+
+for i in range(c):
+    l1.append(raw_input("Enter a value:"))
+    
+    if i%2==0:
+        print l2.append("even")
+    else:
+        print l2.append("odd")
+print l1
+print l2
+
+
+50. input n=3 
+    output: 	111
+		101
+		111
+
+
+
+================================================
+
+n=input("enter number")
+for i in range(n):
+    
+    if i > 0 and i < n-1:
+        s = "1" * n
+        s = list(s)
+        for i in range(len(s)):
+            if i > 0 and i < len(s)-1:
+                s[i] = "0"
+        s = "".join(s)
+        print s
+    else:
+        print "1" * n
+
+
+51. input: google
+	output: {'g':2,'o':2,'l':1,'e':1} use dictionary comprehension
+======================================================================
+d={dict1[i]:string.count(i) for i in string}
+print d
+
+
+
+
+
+52. keys=['k1','k2'], values = ['v1','v2'] form a dictionary.
+============================================================
+keys=['k1','k2','k3']
+values = ['v1','v2','v3']
+
+dict1 = {}
+j = 0
+for i in keys:
+    print i
+    dict1[i] = values[j]
+    j = j+1
+print dict1
+
+53. Sort the list marks = [("mohan", 80), ("satish", 90), ("purnesh", 40), ("venkat", 30)] acording to descending order of marks
+================================================================================================================================
+def sort_mrk(l1):
+    new_list=[]
+    while l1:
+        base_num=l1[0]
+        mark_tuple=l1[0][1]
+        for i in l1:
+            
+            t=i[1]
+            if mark_tuple < t:
+                base_num = i
+        new_list.append(base_num)
+        l1.remove(base_num)
+        
+    print "sorted list:",new_list
+    
+
+num_stud=input("enter the number of students")
+l1 = []
+#while True:
+for i in range(num_stud):
+    
+    x=raw_input("Enter name :")
+    y=input("Enter Marks")
+    
+    l1.append((x,y))
+print l1
+
+
+sort_mrk(l1)
+
+
+
+
+54. write a function to get dynamic list for floating numbers also based on strat and end and step parameters
+==============================================================================================================
+
+
+start=input("Enter the first elemnent in the list")
+end=input("Enter end value in the list")
+step=input("Enter the step value ")
+temp=[]
+def float_fun():
+    
+    for i in range(start,end,step):
+        temp.append(i)
+    print temp
+    for j in range(len(temp)):
+        temp[j] = float(temp[j])
+        
+    print temp
+float_fun()
+
+
+55. find out all perfect numbers in given range
+===============================================
+x = input("Enter the range")
+
+print "Perfect numbers are"
+
+for i in range(1,x+2):
+    temp = []
+    s1 = 0
+    for j in range(1,i):
+        if i%j == 0:
+            temp.append(j)
+     
+    for k in temp:
+        s1 = s1 + k
+        
+    if s1 == i:
+        print i,
+
+
+56. WAP to do all stack operations using lists
+==============================================
+
+def push(self):
+    if len(stack) >= limit:
+        print 'Stack Overflow!'
+    else:
+        stack.append(elements)
+    print 'Stack after Push',stack
+def pop():
+    if len(stack) <= 0:
+        print 'Stack Underflow!'
+        return 0
+    else:
+        return stack.pop()
+stack = []
+
+limit = input('Enter the no of elements to be stored in stack:')
+for t in range(limit):
+    contents = input('Enter element '+str(t)+':')
+    push(element)
+    
+for t in range(limit):
+    print 'Popping '+str(limit-t)+'th element:',pop()
+    print 'Stack after Popping!',stack
+
+
+58. WAP to remove n occurances of specified element from a list
+===============================================================
+l1=[]
+c = int(raw_input("No.of inputs:"))
+for i in range(c):
+    l1.append(raw_input("Enter a value:"))
+n = raw_input("Enter the element to be removed")
+
+
+c=l1.count(n)
+print c
+m = int(raw_input("how many occurances do you want to remove"))
+print l1
+
+
+for i in range(m):
+    l1.remove(n)
+
+print l1
+
+
+59. copy 1 file content in to another file(Take the source and destination file path from the user)
+===================================================================================================
+input_file = raw_input("Enter the file name")
+out_file = raw_input("Enter the destination file to which the content is to be copied")
+
+infile = open(input_file,"w+")
+outfile = open(out_file,"w+")
+
+infile.write("Hi Sugitha")
+
+infile.close()
+
+read1 = open(input_file,'r')
+for i in read1:
+    outfile.write(i)
+    
+
+read1.close() 
+outfile.close()
+
+
+
+
+
+
+
+
+
 
